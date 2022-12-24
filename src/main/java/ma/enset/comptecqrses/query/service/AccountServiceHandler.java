@@ -89,7 +89,7 @@ public class AccountServiceHandler {
         account.setStatus(event.getAccountStatus());
         accountRepository.save(account);
     }
-
+/*
     @QueryHandler // AccountResponseDTO to use in the query as response
     public List<AccountResponseDTO> on(FindAllAccountsQuery query) {
         List<Account> accounts = accountRepository.findAll();
@@ -99,5 +99,15 @@ public class AccountServiceHandler {
     public AccountResponseDTO on(FindAccountQuery query){
         Account account = accountRepository.findById(query.getId()).get();
         return accountMapper.toAccountResponseDTO(account);
+    }
+
+ */
+    @QueryHandler // AccountResponseDTO to use in the query as response
+    public List<Account> on(FindAllAccountsQuery query) {
+        return accountRepository.findAll();
+    }
+    @QueryHandler
+    public Account on(FindAccountQuery query){
+        return accountRepository.findById(query.getId()).get();
     }
 }

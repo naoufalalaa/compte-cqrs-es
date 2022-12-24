@@ -30,7 +30,7 @@ public class AccountQueryHandler {
     }
 
     @GetMapping("/account/{id}")
-    public AccountResponseDTO getOne(@PathVariable String id){
-        return queryGateway.query(new FindAccountQuery(id), AccountResponseDTO.class).join();
+    public Account getOne(@PathVariable String id){
+        return queryGateway.query(new FindAccountQuery(id), Account.class).join();
     }
 }
