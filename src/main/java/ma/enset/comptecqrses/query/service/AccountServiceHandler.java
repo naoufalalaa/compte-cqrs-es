@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class AccountServiceHandler {
     private AccountRepository accountRepository;
     private OperationRepository operationRepository;
-    private AccountMapper accountMapper;
+    //private AccountMapper accountMapper;
 
     // on rejoue les événements émmit par les commandes
     @EventHandler
